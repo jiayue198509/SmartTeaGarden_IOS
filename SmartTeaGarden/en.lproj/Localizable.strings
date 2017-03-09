@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  SmartTeaGarden
+
+  Created by jiaerdong on 2017/3/9.
+  Copyright © 2017年 tianciqinyun. All rights reserved.
+*/
+"app_name"="天赐秦韵";
+"exit"="退出登录";
+"video_history"="历史视频";
+"about"="关于我们";
