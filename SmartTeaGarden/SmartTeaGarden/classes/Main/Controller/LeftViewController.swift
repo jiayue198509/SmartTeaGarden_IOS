@@ -8,11 +8,9 @@
 import UIKit
 
 enum LeftMenu: Int {
-    case main = 0
-    case swift
-    case java
-    case go
-    case nonMenu
+    case history = 0
+    case about
+    case exit
 }
 
 protocol LeftMenuProtocol : class {
@@ -22,12 +20,14 @@ protocol LeftMenuProtocol : class {
 class LeftViewController : UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Main", "Swift", "Java", "Go", "NonMenu"]
+    var menus = [NSLocalizedString("video_history", comment: ""), NSLocalizedString("about", comment: ""), NSLocalizedString("exit", comment: "")]
+    
+    var menuIcon = [UIImage(named: "video_history")!, UIImage(named: "about")!, UIImage(named: "exit")!]
+    
     var mainViewController: UIViewController!
-    var swiftViewController: UIViewController!
-    var javaViewController: UIViewController!
-    var goViewController: UIViewController!
-    var nonMenuViewController: UIViewController!
+    var historyViewController: UIViewController!
+    var aboutViewController: UIViewController!
+    var loginViewController: UIViewController!
     var imageHeaderView: ImageHeaderView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,10 +39,10 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
         
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! SwiftViewController
-//        self.swiftViewController = UINavigationController(rootViewController: swiftViewController)
-//        
+        let storyboard = UIStoryboard(name: "Slide", bundle: nil)
+        let aboutUsViewController = storyboard.instantiateViewController(withIdentifier: "AboutVC") as! AboutUsViewController
+        self.aboutViewController = UINavigationController(rootViewController: aboutUsViewController)
+//
 //        let javaViewController = storyboard.instantiateViewController(withIdentifier: "JavaViewController") as! JavaViewController
 //        self.javaViewController = UINavigationController(rootViewController: javaViewController)
 //        
@@ -53,7 +53,8 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
 //        nonMenuController.delegate = self
 //        self.nonMenuViewController = UINavigationController(rootViewController: nonMenuController)
         
-        self.tableView.registerCellClass(BaseTableViewCell.self)
+//        self.tableView.registerCellClass(LeftMenuTableViewCell.self)
+        self.tableView.registerCellNib(LeftMenuTableViewCell.self)
         
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
@@ -65,22 +66,21 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
+        self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
         self.view.layoutIfNeeded()
     }
     
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
-        case .main:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-        case .swift:
-            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
-        case .java:
-            self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
-        case .go:
-            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
-        case .nonMenu:
-            self.slideMenuController()?.changeMainViewController(self.nonMenuViewController, close: true)
+//        case .main:
+//            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        case .about:
+            
+            self.slideMenuController()?.changeMainViewController(self.aboutViewController, close: true)
+        case .history:
+            self.slideMenuController()?.changeMainViewController(self.historyViewController, close: true)
+        case .exit:
+            self.slideMenuController()?.changeMainViewController(self.loginViewController, close: true)
         }
     }
 }
@@ -89,8 +89,8 @@ extension LeftViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift, .java, .go, .nonMenu:
-                return BaseTableViewCell.height()
+            case .history, .about, .exit:
+                return LeftMenuTableViewCell.height()
             }
         }
         return 0
@@ -119,9 +119,18 @@ extension LeftViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift, .java, .go, .nonMenu:
-                let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
-                cell.setData(menus[indexPath.row])
+            case .history, .about, .exit:
+                let a = LeftMenuTableViewCell.identifier
+                
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: LeftMenuTableViewCell.identifier) as! LeftMenuTableViewCell
+                
+                
+//                let cell = LeftMenuTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: LeftMenuTableViewCell.identifier)
+                let data = LeftMenuTableViewCellData(image: menuIcon[indexPath.row], text: menus[indexPath.row])
+                cell.setData(data)
+                if menu == .exit {
+                    cell.accessoryType = .none
+                }
                 return cell
             }
         }
