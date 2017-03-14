@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import  UIKit
+
+let kScreenW = UIScreen.main.bounds.width
+let kScreenH = UIScreen.main.bounds.height
 
 public let kAppId = ""
 public let kAppKey = ""

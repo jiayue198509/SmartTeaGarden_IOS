@@ -24,7 +24,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     
     var menuIcon = [UIImage(named: "video_history")!, UIImage(named: "about")!, UIImage(named: "exit")!]
     
-    var mainViewController: UIViewController!
+    var mainViewController: UINavigationController!
     var historyViewController: UIViewController!
     var aboutViewController: UIViewController!
     var loginViewController: UIViewController!
@@ -40,8 +40,8 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "Slide", bundle: nil)
-        let aboutUsViewController = storyboard.instantiateViewController(withIdentifier: "AboutVC") as! AboutUsViewController
-        self.aboutViewController = UINavigationController(rootViewController: aboutUsViewController)
+        self.aboutViewController = storyboard.instantiateViewController(withIdentifier: "AboutVC") as! AboutUsViewController
+//        self.aboutViewController = UINavigationController(rootViewController: aboutUsViewController)
 //
 //        let javaViewController = storyboard.instantiateViewController(withIdentifier: "JavaViewController") as! JavaViewController
 //        self.javaViewController = UINavigationController(rootViewController: javaViewController)
@@ -72,13 +72,12 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
-//        case .main:
-//            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
         case .about:
-            
-            self.slideMenuController()?.changeMainViewController(self.aboutViewController, close: true)
+            self.mainViewController.pushViewController(aboutViewController, animated: true)
+            self.slideMenuController()?.closeLeft()
         case .history:
-            self.slideMenuController()?.changeMainViewController(self.historyViewController, close: true)
+            self.mainViewController.pushViewController(aboutViewController, animated: true)
+            self.slideMenuController()?.closeLeft()
         case .exit:
             self.slideMenuController()?.changeMainViewController(self.loginViewController, close: true)
         }
@@ -124,8 +123,6 @@ extension LeftViewController : UITableViewDataSource {
                 
                 let cell = self.tableView.dequeueReusableCell(withIdentifier: LeftMenuTableViewCell.identifier) as! LeftMenuTableViewCell
                 
-                
-//                let cell = LeftMenuTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: LeftMenuTableViewCell.identifier)
                 let data = LeftMenuTableViewCellData(image: menuIcon[indexPath.row], text: menus[indexPath.row])
                 cell.setData(data)
                 if menu == .exit {

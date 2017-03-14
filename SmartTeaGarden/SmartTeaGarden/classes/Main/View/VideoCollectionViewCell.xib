@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="kCollectionViewCellID" reuseIdentifier="kCollectionViewCellID" id="gTV-IL-0wX" customClass="VideoCollectionViewCell" customModule="SmartTeaGarden" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="361" height="172"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_header_background" translatesAutoresizingMaskIntoConstraints="NO" id="S5A-h1-ql9">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="172"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-Wj-Ejh">
+                        <rect key="frame" x="159.5" y="65" width="42" height="42"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="种植一区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncI-kz-801">
+                        <rect key="frame" x="0.0" y="154" width="361" height="18"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ncI-kz-801" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Ta-Yy-b6o"/>
+                <constraint firstItem="S5A-h1-ql9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8G5-bp-MAV"/>
+                <constraint firstAttribute="trailing" secondItem="ncI-kz-801" secondAttribute="trailing" id="BjA-ia-Cpn"/>
+                <constraint firstItem="QeY-Wj-Ejh" firstAttribute="centerY" secondItem="S5A-h1-ql9" secondAttribute="centerY" id="DRa-yf-GtS"/>
+                <constraint firstItem="QeY-Wj-Ejh" firstAttribute="centerX" secondItem="S5A-h1-ql9" secondAttribute="centerX" id="DYz-Tb-aTC"/>
+                <constraint firstItem="S5A-h1-ql9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="T4d-ef-blu"/>
+                <constraint firstAttribute="bottom" secondItem="ncI-kz-801" secondAttribute="bottom" id="VPR-KF-tP7"/>
+                <constraint firstAttribute="trailing" secondItem="S5A-h1-ql9" secondAttribute="trailing" id="bnO-Xc-cLc"/>
+                <constraint firstAttribute="bottom" secondItem="S5A-h1-ql9" secondAttribute="bottom" id="hqM-XM-T8X"/>
+            </constraints>
+            <size key="customSize" width="361" height="172"/>
+            <connections>
+                <outlet property="videoName" destination="ncI-kz-801" id="0Q9-qJ-cik"/>
+                <outlet property="videoThumb" destination="S5A-h1-ql9" id="9Ab-ZC-5LG"/>
+            </connections>
+            <point key="canvasLocation" x="189.5" y="164"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="left_header_background" width="413" height="293"/>
+        <image name="play" width="42" height="42"/>
+    </resources>
+</document>

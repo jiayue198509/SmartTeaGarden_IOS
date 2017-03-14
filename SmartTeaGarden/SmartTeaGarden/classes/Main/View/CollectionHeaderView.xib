@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kHeaderViewID" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="SmartTeaGarden" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="448" height="42"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频监控" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cga-yL-waj">
+                    <rect key="frame" x="13" y="11.5" width="65.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="rba-l6-ML9">
+                    <rect key="frame" x="428" y="16" width="10" height="10"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-e4-EMF">
+                    <rect key="frame" x="390" y="11.5" width="33" height="19.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMu-dF-vMl">
+                            <rect key="frame" x="0.0" y="0.0" width="33" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cga-yL-waj" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="CqV-cb-pGP"/>
+                <constraint firstItem="rba-l6-ML9" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="NsT-EQ-nlJ"/>
+                <constraint firstItem="rba-l6-ML9" firstAttribute="leading" secondItem="EMu-dF-vMl" secondAttribute="trailing" constant="5" id="U9B-se-zvt"/>
+                <constraint firstAttribute="trailing" secondItem="rba-l6-ML9" secondAttribute="trailing" constant="10" id="flc-Qr-aiP"/>
+                <constraint firstItem="cga-yL-waj" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="13" id="pTr-MW-5h7"/>
+                <constraint firstItem="EMu-dF-vMl" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="qH3-Fe-IL0"/>
+                <constraint firstItem="kkz-e4-EMF" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="ysY-GE-RoE"/>
+            </constraints>
+            <point key="canvasLocation" x="62" y="40"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="more" width="10" height="10"/>
+    </resources>
+</document>
