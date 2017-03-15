@@ -8,15 +8,16 @@
 
 import UIKit
 
-let kWaterLineCellID = "kWaterLineCellID"
 class WaterLineView: UIView {
+    
+    @IBOutlet weak var pieItem2View: UIView!
+    @IBOutlet weak var pieItem1View: UIView!
     
     // MARK: 从Xib中加载出来
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-    
 }
 
 

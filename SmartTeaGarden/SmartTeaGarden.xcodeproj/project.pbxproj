@@ -12,6 +12,7 @@
 		F01C05281E727A9B009B96F5 /* LeftMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01C05261E727A9B009B96F5 /* LeftMenuTableViewCell.xib */; };
 		F01C052B1E729C5F009B96F5 /* Slide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01C05291E729C5F009B96F5 /* Slide.storyboard */; };
 		F01C052D1E72A046009B96F5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C052C1E72A046009B96F5 /* AboutUsViewController.swift */; };
+		F02056501E77ED6C0020D4A0 /* WaveLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020564F1E77ED6C0020D4A0 /* WaveLoadingIndicator.swift */; };
 		F0371B971E77C21D00AEAC60 /* PieItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0371B961E77C21D00AEAC60 /* PieItemView.swift */; };
 		F0371B991E77C22E00AEAC60 /* PieItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0371B981E77C22E00AEAC60 /* PieItemView.xib */; };
 		F08BE99E1E77814E00757728 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE99C1E77814E00757728 /* CollectionHeaderView.swift */; };
@@ -25,6 +26,10 @@
 		F09432ED1E73D20F00DF0473 /* tea3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F09432E61E73D20F00DF0473 /* tea3.jpg */; };
 		F09432EE1E73D20F00DF0473 /* tea4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F09432E71E73D20F00DF0473 /* tea4.jpg */; };
 		F09432EF1E73D20F00DF0473 /* tea5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F09432E81E73D20F00DF0473 /* tea5.jpg */; };
+		F096C1931E78CC6C00D79A9A /* LocalWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096C1921E78CC6C00D79A9A /* LocalWeatherView.swift */; };
+		F096C1951E78CC8400D79A9A /* LocalWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F096C1941E78CC8400D79A9A /* LocalWeatherView.xib */; };
+		F096C1971E78E20500D79A9A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F096C1961E78E20500D79A9A /* ChartView.swift */; };
+		F096C1991E78E21400D79A9A /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F096C1981E78E21400D79A9A /* ChartView.xib */; };
 		F0DB917C1E713FD200190900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB917B1E713FD200190900 /* AppDelegate.swift */; };
 		F0DB91811E713FD300190900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB917F1E713FD300190900 /* Main.storyboard */; };
 		F0DB91831E713FD300190900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0DB91821E713FD300190900 /* Assets.xcassets */; };
@@ -64,6 +69,7 @@
 		F01C05261E727A9B009B96F5 /* LeftMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuTableViewCell.xib; sourceTree = "<group>"; };
 		F01C052A1E729C5F009B96F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartTeaGarden/Base.lproj/Slide.storyboard; sourceTree = SOURCE_ROOT; };
 		F01C052C1E72A046009B96F5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		F020564F1E77ED6C0020D4A0 /* WaveLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveLoadingIndicator.swift; sourceTree = "<group>"; };
 		F0371B961E77C21D00AEAC60 /* PieItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieItemView.swift; sourceTree = "<group>"; };
 		F0371B981E77C22E00AEAC60 /* PieItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieItemView.xib; sourceTree = "<group>"; };
 		F08BE99C1E77814E00757728 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 		F09432E61E73D20F00DF0473 /* tea3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea3.jpg; sourceTree = "<group>"; };
 		F09432E71E73D20F00DF0473 /* tea4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea4.jpg; sourceTree = "<group>"; };
 		F09432E81E73D20F00DF0473 /* tea5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tea5.jpg; sourceTree = "<group>"; };
+		F096C1921E78CC6C00D79A9A /* LocalWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalWeatherView.swift; sourceTree = "<group>"; };
+		F096C1941E78CC8400D79A9A /* LocalWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalWeatherView.xib; sourceTree = "<group>"; };
+		F096C1961E78E20500D79A9A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		F096C1981E78E21400D79A9A /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		F0DB91781E713FD200190900 /* SmartTeaGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTeaGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB917B1E713FD200190900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DB91801E713FD300190900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +233,7 @@
 			children = (
 				F0DB91E41E714F8F00190900 /* TableViewCell */,
 				F0DB91E01E714F1F00190900 /* ImageHeaderView.swift */,
+				F020564F1E77ED6C0020D4A0 /* WaveLoadingIndicator.swift */,
 				F0DB91E11E714F1F00190900 /* ImageHeaderView.xib */,
 				F0DCBC9C1E769DC700988008 /* VideoCollectionViewCell.swift */,
 				F0DCBC9D1E769DC700988008 /* VideoCollectionViewCell.xib */,
@@ -232,6 +243,10 @@
 				F08BE9A21E77927200757728 /* WaterLineView.xib */,
 				F0371B961E77C21D00AEAC60 /* PieItemView.swift */,
 				F0371B981E77C22E00AEAC60 /* PieItemView.xib */,
+				F096C1921E78CC6C00D79A9A /* LocalWeatherView.swift */,
+				F096C1941E78CC8400D79A9A /* LocalWeatherView.xib */,
+				F096C1961E78E20500D79A9A /* ChartView.swift */,
+				F096C1981E78E21400D79A9A /* ChartView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +496,8 @@
 			files = (
 				F09432EE1E73D20F00DF0473 /* tea4.jpg in Resources */,
 				F09432EA1E73D20F00DF0473 /* logo.png in Resources */,
+				F096C1951E78CC8400D79A9A /* LocalWeatherView.xib in Resources */,
+				F096C1991E78E21400D79A9A /* ChartView.xib in Resources */,
 				F09432EC1E73D20F00DF0473 /* tea2.jpg in Resources */,
 				F0E4D6031E72A39600CEDC40 /* introduce.html in Resources */,
 				F09432EF1E73D20F00DF0473 /* tea5.jpg in Resources */,
@@ -562,6 +579,8 @@
 				F0DCBC9E1E769DC700988008 /* VideoCollectionViewCell.swift in Sources */,
 				F01C052D1E72A046009B96F5 /* AboutUsViewController.swift in Sources */,
 				F0371B971E77C21D00AEAC60 /* PieItemView.swift in Sources */,
+				F096C1971E78E20500D79A9A /* ChartView.swift in Sources */,
+				F02056501E77ED6C0020D4A0 /* WaveLoadingIndicator.swift in Sources */,
 				F0DB91CA1E714B1400190900 /* UIView.swift in Sources */,
 				F0DB91C81E714B1400190900 /* UIApplication.swift in Sources */,
 				F0DB91DF1E714E1400190900 /* RightViewController.swift in Sources */,
@@ -584,6 +603,7 @@
 				F0DCBC9B1E766B5A00988008 /* GuideView.swift in Sources */,
 				F08BE99E1E77814E00757728 /* CollectionHeaderView.swift in Sources */,
 				F0DB91C51E714B1400190900 /* UIColor.swift in Sources */,
+				F096C1931E78CC6C00D79A9A /* LocalWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

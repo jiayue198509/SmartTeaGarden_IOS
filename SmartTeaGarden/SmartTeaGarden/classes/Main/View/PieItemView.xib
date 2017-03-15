@@ -5,34 +5,51 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PieItemView">
+            <connections>
+                <outlet property="nameLabel" destination="CJx-CI-Wdw" id="Iei-s6-Tft"/>
+                <outlet property="stateLabel" destination="CJx-CI-Wdw" id="upg-uE-vET"/>
+                <outlet property="waveIndicator" destination="IVq-16-uHY" id="ylF-hP-Xu5"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="186" height="185"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一号蓄水池" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJx-CI-Wdw">
-                    <rect key="frame" x="5" y="5" width="82" height="19.5"/>
+                    <rect key="frame" x="10" y="5" width="82" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位正常" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-TF-1xK">
-                    <rect key="frame" x="62.5" y="158" width="61.5" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <rect key="frame" x="66.5" y="160" width="53.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVq-16-uHY" customClass="WaveLoadingIndicator" customModule="SmartTeaGarden" customModuleProvider="target">
+                    <rect key="frame" x="28.5" y="28" width="129" height="129"/>
+                    <color key="backgroundColor" red="0.2149793837" green="0.6079101562" blue="0.124593099" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="IVq-16-uHY" secondAttribute="height" multiplier="1:1" id="4P8-hf-vCB"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="y1Q-TF-1xK" secondAttribute="bottom" constant="9" id="5w5-Re-vSa"/>
                 <constraint firstItem="y1Q-TF-1xK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E6h-Y4-5FB"/>
-                <constraint firstItem="CJx-CI-Wdw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="ala-vM-GH2"/>
+                <constraint firstItem="IVq-16-uHY" firstAttribute="top" secondItem="CJx-CI-Wdw" secondAttribute="bottom" constant="3" id="KIf-ak-8rY"/>
+                <constraint firstItem="CJx-CI-Wdw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ala-vM-GH2"/>
+                <constraint firstItem="y1Q-TF-1xK" firstAttribute="top" secondItem="IVq-16-uHY" secondAttribute="bottom" constant="3" id="cwK-mY-g4N"/>
                 <constraint firstItem="CJx-CI-Wdw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="elZ-gf-9by"/>
+                <constraint firstItem="IVq-16-uHY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="onE-qY-W4a"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-61" y="-176.5"/>
