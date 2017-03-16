@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Right View Controller-->
+        <scene sceneID="pZd-IY-RSK">
+            <objects>
+                <viewController storyboardIdentifier="RightViewController" id="qrs-Eo-MHG" customClass="RightViewController" customModule="SmartTeaGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wRf-td-MGH"/>
+                        <viewControllerLayoutGuide type="bottom" id="AbQ-tO-vj5"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.89999997615814209" contentMode="scaleToFill" id="5Hu-r4-459">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfF-HW-rmK">
+                                <rect key="frame" x="180" y="100" width="240" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="KON-Ep-KE8"/>
+                                    <constraint firstAttribute="height" constant="93" id="eWH-Gl-YDb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.97254901959999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="HfF-HW-rmK" secondAttribute="centerX" id="Fcl-Wh-a7p"/>
+                            <constraint firstItem="HfF-HW-rmK" firstAttribute="top" secondItem="wRf-td-MGH" secondAttribute="bottom" constant="80" id="nb3-Je-teI"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJO-Me-EzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-1196"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="XaV-Yd-9e4">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="axq-GF-Xrp" customClass="LeftViewController" customModule="SmartTeaGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPB-KO-wfE"/>
+                        <viewControllerLayoutGuide type="bottom" id="MtR-5B-xwf"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.89999997615814209" contentMode="scaleToFill" id="9Be-3Y-rjs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-py-Uwv">
+                                <rect key="frame" x="0.0" y="220" width="600" height="380"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="axq-GF-Xrp" id="17q-PF-i2U"/>
+                                    <outlet property="delegate" destination="axq-GF-Xrp" id="0Ok-7y-Dr7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RAM-py-Uwv" secondAttribute="trailing" id="6Zq-ng-45T"/>
+                            <constraint firstItem="MtR-5B-xwf" firstAttribute="top" secondItem="RAM-py-Uwv" secondAttribute="bottom" id="Mm4-FW-iz5"/>
+                            <constraint firstItem="RAM-py-Uwv" firstAttribute="top" secondItem="9Be-3Y-rjs" secondAttribute="top" constant="220" id="NX6-rD-H5j"/>
+                            <constraint firstItem="RAM-py-Uwv" firstAttribute="leading" secondItem="9Be-3Y-rjs" secondAttribute="leading" id="qqf-dH-Z6m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BMo-JG-sQV"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="RAM-py-Uwv" id="1mV-wY-Dw6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gA0-bL-yxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827" y="-539"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="39V-tU-3hP">
+            <objects>
+                <viewController storyboardIdentifier="AboutVC" title="关于我们" id="kXx-3L-7XV" userLabel="关于我们" customClass="AboutUsViewController" customModule="SmartTeaGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9iN-82-D9t"/>
+                        <viewControllerLayoutGuide type="bottom" id="38Z-fB-wfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="niI-gz-age">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-Lx-LaD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </webView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7nj-Lx-LaD" secondAttribute="trailing" id="Z96-y2-CZu"/>
+                            <constraint firstItem="7nj-Lx-LaD" firstAttribute="top" secondItem="9iN-82-D9t" secondAttribute="bottom" id="iND-Gm-fbK"/>
+                            <constraint firstItem="7nj-Lx-LaD" firstAttribute="leading" secondItem="niI-gz-age" secondAttribute="leading" id="lBe-dZ-cjB"/>
+                            <constraint firstItem="38Z-fB-wfo" firstAttribute="top" secondItem="7nj-Lx-LaD" secondAttribute="bottom" id="wTk-3X-VYg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于我们" id="OMq-Hr-jSe" userLabel="关于我们"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="i9O-Dp-ba7" id="dvW-9T-MKX"/>
+                        <outlet property="webView" destination="7nj-Lx-LaD" id="euK-Me-BiB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFa-Cx-mz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="i9O-Dp-ba7">
+                    <connections>
+                        <outlet property="delegate" destination="kXx-3L-7XV" id="yFm-Ec-Q7a"/>
+                        <outlet property="searchContentsController" destination="kXx-3L-7XV" id="kcg-OM-G1Q"/>
+                        <outlet property="searchResultsDataSource" destination="kXx-3L-7XV" id="oA4-d6-1jN"/>
+                        <outlet property="searchResultsDelegate" destination="kXx-3L-7XV" id="RRI-1E-XSe"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1934" y="-510"/>
+        </scene>
+    </scenes>
+</document>
