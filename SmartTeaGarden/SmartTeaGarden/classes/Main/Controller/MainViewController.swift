@@ -14,7 +14,10 @@ private let kEdgeInsetMargin : CGFloat = 10
 private let kItemMargin : CGFloat = 10
 private let kHeaderViewH : CGFloat = 50
 private let kWaterLineViewH: CGFloat = 225
-private let viewMargin: CGFloat = 10
+private let kChartViewH: CGFloat = 225
+private let kWeatherStationViewH: CGFloat = 225
+private let kLocalWeatherViewH: CGFloat = 245
+private let viewMargin: CGFloat = 7
 
 let kNormalItemW = (kScreenW - 5 * kItemMargin) / 2
 let kNormalItemH = kNormalItemW * 3 / 4
@@ -22,8 +25,9 @@ let kNormalItemH = kNormalItemW * 3 / 4
 
 class MainViewController: UIViewController {
     
-    var mainContens = ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15"]
+    let debugData:[[String:Any]] = [["area":"", "value":"25"],["area":"", "value":"9"],["area":"2", "value":"25"],["area":"10", "value":"15"],["area":"", "value":"25"],["area":"", "value":"9"],["area":"2", "value":"25"],["area":"10", "value":"15"],["area":"", "value":"25"],["area":"", "value":"9"],["area":"2", "value":"25"],["area":"10", "value":"15"]]
     
+    lazy var charDataSource: [ChartModel] = [ChartModel]()
     lazy var collectionView : UICollectionView = {[unowned self] in
         // 1.创建布局
         let layout = UICollectionViewFlowLayout()
@@ -40,12 +44,14 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
+        collectionView.showsVerticalScrollIndicator = false
+
         collectionView.register(UINib(nibName: "VideoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCollectionViewCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "kHeaderViewID")
         
         return collectionView
     }()
+    
     
     fileprivate lazy var waterView : WaterLineView = {
         let waterView = WaterLineView.waterLineView()
@@ -53,14 +59,44 @@ class MainViewController: UIViewController {
         return waterView
     }()
     
+    fileprivate lazy var chartView : ChartView = {
+        let chartCiew = ChartView.chartView()
+        chartCiew.frame = CGRect(x: 0, y: -(kWaterLineViewH + kChartViewH), width: kScreenW - 2 * viewMargin, height: kChartViewH)
+        return chartCiew
+    }()
+    
+    fileprivate lazy var weatherStationView : WeatherStationView = {
+        let weatherStationView = WeatherStationView.weatherStationView()
+        weatherStationView.frame = CGRect(x: 0, y: -(kWaterLineViewH + kChartViewH + kWeatherStationViewH), width: kScreenW - 2 * viewMargin, height: kWeatherStationViewH)
+        return weatherStationView
+    }()
+    
+    fileprivate lazy var localWeatherView : LocalWeatherView = {
+        let localWeatherView = LocalWeatherView.localWeatherView()
+        localWeatherView.frame = CGRect(x: 0, y: -(kWaterLineViewH + kChartViewH + kWeatherStationViewH + kLocalWeatherViewH), width: kScreenW - 2 * viewMargin, height: kLocalWeatherViewH)
+        return localWeatherView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         collectionView.addSubview(waterView)
-//        setConstraints()
+        collectionView.addSubview(chartView)
+        collectionView.addSubview(localWeatherView)
+        collectionView.addSubview(weatherStationView)
+
+        
+//        模拟数据
+        chartView.setThreshold(min: 10, max: 20)
+        charDataSource.removeAll()
+        for item in debugData {
+            let model = ChartModel(dict: item)
+            self.charDataSource.append(model)
+        }
+        chartView.dataSource = charDataSource
         
         // 4.设置collectionView的内边距
-        collectionView.contentInset = UIEdgeInsets(top: kWaterLineViewH, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kWaterLineViewH + kChartViewH + kWeatherStationViewH + kLocalWeatherViewH, left: 0, bottom: 0, right: 0)
     }
 
     
@@ -71,6 +107,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+//        self.chartView.setupUI()
     }
 
 }
@@ -83,7 +120,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mainContens.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -153,18 +190,6 @@ extension MainViewController {
         if needShowGuideView() {
             self.showGuideView()
         }
-    }
-    
-    func setConstraints() {
-        // 关闭autoresizing 不关闭否则程序崩溃
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        //右边约束
-        let right:NSLayoutConstraint = NSLayoutConstraint(item: collectionView, attribute: NSLayoutAttribute.right, relatedBy:NSLayoutRelation.equal, toItem:self.view, attribute:NSLayoutAttribute.right, multiplier:1.0, constant: -10)
-        collectionView.superview!.addConstraint(right)//父控件添加约束
-        
-        //右边约束
-        let left:NSLayoutConstraint = NSLayoutConstraint(item: collectionView, attribute: NSLayoutAttribute.right, relatedBy:NSLayoutRelation.equal, toItem:self.view, attribute:NSLayoutAttribute.left, multiplier:1.0, constant: -10)
-        collectionView.superview!.addConstraint(left)//父控件添加约束
     }
 }
 

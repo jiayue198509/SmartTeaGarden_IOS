@@ -13,8 +13,11 @@
 		F01C052B1E729C5F009B96F5 /* Slide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01C05291E729C5F009B96F5 /* Slide.storyboard */; };
 		F01C052D1E72A046009B96F5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C052C1E72A046009B96F5 /* AboutUsViewController.swift */; };
 		F02056501E77ED6C0020D4A0 /* WaveLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020564F1E77ED6C0020D4A0 /* WaveLoadingIndicator.swift */; };
+		F02E29D31E790AA8003087EE /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E29D21E790AA8003087EE /* ChartModel.swift */; };
 		F0371B971E77C21D00AEAC60 /* PieItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0371B961E77C21D00AEAC60 /* PieItemView.swift */; };
 		F0371B991E77C22E00AEAC60 /* PieItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0371B981E77C22E00AEAC60 /* PieItemView.xib */; };
+		F0797A8B1E7A207D0026086F /* WeatherStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0797A8A1E7A207D0026086F /* WeatherStationView.swift */; };
+		F0797A8D1E7A20F20026086F /* WeatherStationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0797A8C1E7A20F20026086F /* WeatherStationView.xib */; };
 		F08BE99E1E77814E00757728 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE99C1E77814E00757728 /* CollectionHeaderView.swift */; };
 		F08BE99F1E77814E00757728 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BE99D1E77814E00757728 /* CollectionHeaderView.xib */; };
 		F08BE9A11E77926300757728 /* WaterLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE9A01E77926300757728 /* WaterLineView.swift */; };
@@ -70,8 +73,11 @@
 		F01C052A1E729C5F009B96F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartTeaGarden/Base.lproj/Slide.storyboard; sourceTree = SOURCE_ROOT; };
 		F01C052C1E72A046009B96F5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		F020564F1E77ED6C0020D4A0 /* WaveLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveLoadingIndicator.swift; sourceTree = "<group>"; };
+		F02E29D21E790AA8003087EE /* ChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		F0371B961E77C21D00AEAC60 /* PieItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieItemView.swift; sourceTree = "<group>"; };
 		F0371B981E77C22E00AEAC60 /* PieItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieItemView.xib; sourceTree = "<group>"; };
+		F0797A8A1E7A207D0026086F /* WeatherStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherStationView.swift; sourceTree = "<group>"; };
+		F0797A8C1E7A20F20026086F /* WeatherStationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherStationView.xib; sourceTree = "<group>"; };
 		F08BE99C1E77814E00757728 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		F08BE99D1E77814E00757728 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		F08BE9A01E77926300757728 /* WaterLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterLineView.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 		F0DB91AC1E7142F400190900 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F02E29D21E790AA8003087EE /* ChartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +254,8 @@
 				F096C1941E78CC8400D79A9A /* LocalWeatherView.xib */,
 				F096C1961E78E20500D79A9A /* ChartView.swift */,
 				F096C1981E78E21400D79A9A /* ChartView.xib */,
+				F0797A8A1E7A207D0026086F /* WeatherStationView.swift */,
+				F0797A8C1E7A20F20026086F /* WeatherStationView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +517,7 @@
 				F09432EB1E73D20F00DF0473 /* tea1.jpg in Resources */,
 				F0371B991E77C22E00AEAC60 /* PieItemView.xib in Resources */,
 				F0DB91EA1E714F8F00190900 /* DataTableViewCell.xib in Resources */,
+				F0797A8D1E7A20F20026086F /* WeatherStationView.xib in Resources */,
 				F0DB91E31E714F1F00190900 /* ImageHeaderView.xib in Resources */,
 				F0DB91B71E71473700190900 /* Localizable.strings in Resources */,
 				F08BE9A31E77927200757728 /* WaterLineView.xib in Resources */,
@@ -588,6 +598,8 @@
 				F0DB91CB1E714B1400190900 /* UIViewController.swift in Sources */,
 				F01C05271E727A9B009B96F5 /* LeftMenuTableViewCell.swift in Sources */,
 				F0DB91DD1E714E1400190900 /* LeftViewController.swift in Sources */,
+				F0797A8B1E7A207D0026086F /* WeatherStationView.swift in Sources */,
+				F02E29D31E790AA8003087EE /* ChartModel.swift in Sources */,
 				F0DB91B21E7143F100190900 /* Common.swift in Sources */,
 				F0DB91E21E714F1F00190900 /* ImageHeaderView.swift in Sources */,
 				F0DB91C71E714B1400190900 /* UIImageView.swift in Sources */,

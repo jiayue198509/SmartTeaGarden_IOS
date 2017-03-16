@@ -10,12 +10,11 @@ import UIKit
 
 class LocalWeatherView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
+}
+
+extension LocalWeatherView {
+    class func localWeatherView() -> LocalWeatherView{
+        return Bundle.main.loadNibNamed("LocalWeatherView", owner: nil, options: nil)?.first as! LocalWeatherView
+    }
 }
